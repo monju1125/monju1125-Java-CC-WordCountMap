@@ -16,6 +16,17 @@ public class WordCountMap {
      */
     public Map<String, Integer> returnWordMap(String words){
 
-        return null;
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        // word split
+        String[] wordArray = words.split(" ");
+
+        for(String word : wordArray){
+            if (!map.containsKey(word)) {
+               map.put(word, 1); 
+            } else{
+                map.put(word, map.get(word)+1);
+            }
+        }
+        return map;
     }
 }
